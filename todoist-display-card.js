@@ -439,7 +439,7 @@ class TodoistCard extends LitElement {
                                     : html`<ha-icon
                                         icon="mdi:circle-medium"
                                     ></ha-icon>`}
-                                <div class="todoist-item-text">◦&nbsp;&nbsp;${item.content}</div>
+                                <div class="todoist-item-text">${item.content}</div>
                                 ${(this.config.show_item_delete === undefined) || (this.config.show_item_delete !== false)
                                     ? html`<ha-icon-button
                                         class="todoist-item-delete"
@@ -488,6 +488,10 @@ class TodoistCard extends LitElement {
                 display: flex;
                 flex-direction: row;
                 line-height: 32px;
+                display: list-item;
+                list-style-type: disc;
+                list-style-position: outside;
+                margin-left: 32px;
             }
             
             .todoist-item-completed {
@@ -499,7 +503,6 @@ class TodoistCard extends LitElement {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                padding-left: 20px;
             }
             
             .todoist-item-close {

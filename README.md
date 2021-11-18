@@ -1,12 +1,16 @@
-# Todoist Card
+# Todoist Display Card (FORK)
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 ![hacs_badge](https://img.shields.io/github/v/release/grinstantin/todoist-display-card)
 ![hacs_badge](https://img.shields.io/github/license/grinstantin/todoist-display-card)
 
-Todoist card for [Home Assistant](https://www.home-assistant.io) Lovelace UI. This card displays items from selected Todoist project.
+Todoist compact display card for [Home Assistant](https://www.home-assistant.io) Lovelace UI. This card displays items from selected Todoist project.
 
-![Preview of todoist-display-card](https://user-images.githubusercontent.com/34913257/108243361-a8ea8500-7156-11eb-8313-a149a7cf38b8.png)
+## Fork
+
+This is a fork of https://github.com/grinstantin/todoist-card to implement a quick version of of a fix for https://github.com/grinstantin/todoist-card/issues/5
+
+Just a simple bullet-point list of items with no controls, with less padding and smaller font.
 
 ## Installing
 
