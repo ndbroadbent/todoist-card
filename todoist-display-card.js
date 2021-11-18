@@ -241,7 +241,7 @@ class TodoistCard extends LitElement {
     }
     
     static getConfigElement() {
-        return document.createElement('todoist-card-editor');
+        return document.createElement('todoist-display-card-editor');
     }
 
     setConfig(config) {
@@ -268,7 +268,7 @@ class TodoistCard extends LitElement {
     
     itemAdd(e) {
         if (e.which === 13) {
-            let input = this.shadowRoot.getElementById('todoist-card-item-add');
+            let input = this.shadowRoot.getElementById('todoist-display-card-item-add');
             let value = input.value;
             
             if (value && value.length > 1) {
@@ -439,7 +439,7 @@ class TodoistCard extends LitElement {
                                     : html`<ha-icon
                                         icon="mdi:circle-medium"
                                     ></ha-icon>`}
-                                <div class="todoist-item-text">${item.content}</div>
+                                <div class="todoist-item-text">◦&nbsp;&nbsp;${item.content}</div>
                                 ${(this.config.show_item_delete === undefined) || (this.config.show_item_delete !== false)
                                     ? html`<ha-icon-button
                                         class="todoist-item-delete"
@@ -454,7 +454,7 @@ class TodoistCard extends LitElement {
             </div>
             ${(this.config.show_item_add === undefined) || (this.config.show_item_add !== false)
                 ? html`<input
-                    id="todoist-card-item-add"
+                    id="todoist-display-card-item-add"
                     type="text"
                     class="todoist-item-add"
                     placeholder="New item..."
@@ -474,6 +474,8 @@ class TodoistCard extends LitElement {
                 display: flex;
                 flex-direction: column;
                 padding: 15px;
+                padding-top: 9px;
+                padding-bottom: 21px;
             }
             
             .todoist-list-empty {
@@ -485,7 +487,7 @@ class TodoistCard extends LitElement {
             .todoist-item {
                 display: flex;
                 flex-direction: row;
-                line-height: 48px;
+                line-height: 32px;
             }
             
             .todoist-item-completed {
@@ -493,14 +495,16 @@ class TodoistCard extends LitElement {
             }
             
             .todoist-item-text {
-                font-size: 16px;
+                font-size: 14px;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                padding-left: 20px;
             }
             
             .todoist-item-close {
                 color: #008000;
+                display: none;
             }
 
             .todoist-item-completed .todoist-item-close {
@@ -510,6 +514,7 @@ class TodoistCard extends LitElement {
             .todoist-item-delete {
                 margin-left: auto;
                 color: #800000;
+                display: none;
             }
 
             .todoist-item-completed .todoist-item-delete {
@@ -529,18 +534,18 @@ class TodoistCard extends LitElement {
     }
 }
 
-customElements.define('todoist-card-editor', TodoistCardEditor);
-customElements.define('todoist-card', TodoistCard);
+customElements.define('todoist-display-card-editor', TodoistCardEditor);
+customElements.define('todoist-display-card', TodoistCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
     preview: true,
-    type: 'todoist-card',
+    type: 'todoist-display-card',
     name: 'Todoist Card',
     description: 'Custom card for displaying lists from Todoist.',
 });
 
 console.info(
-    '%c TODOIST-CARD ',
+    '%c todoist-display-card ',
     'color: white; background: orchid; font-weight: 700',
 );
