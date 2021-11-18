@@ -6,6 +6,9 @@
 
 Todoist compact display card for [Home Assistant](https://www.home-assistant.io) Lovelace UI. This card displays items from selected Todoist project.
 
+<img width="512" alt="Screen Shot 2021-11-18 at 2 22 11 PM" src="https://user-images.githubusercontent.com/139536/142333776-c5d15314-1bea-4057-ba7a-e4edee8011cf.png">
+
+
 ## Fork
 
 This is a fork of https://github.com/grinstantin/todoist-card to implement a quick version of of a fix for https://github.com/grinstantin/todoist-card/issues/5
