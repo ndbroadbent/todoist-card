@@ -1,8 +1,8 @@
-# Todoist Display Card (FORK)
+# Todoist Compact Display Card (FORK)
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
-![hacs_badge](https://img.shields.io/github/v/release/grinstantin/todoist-display-card)
-![hacs_badge](https://img.shields.io/github/license/grinstantin/todoist-display-card)
+![hacs_badge](https://img.shields.io/github/v/release/grinstantin/todoist-compact-display-card)
+![hacs_badge](https://img.shields.io/github/license/grinstantin/todoist-compact-display-card)
 
 Todoist compact display card for [Home Assistant](https://www.home-assistant.io) Lovelace UI. This card displays items from selected Todoist project.
 
@@ -22,17 +22,17 @@ Just search for `Todoist Card` in HACS `Frontend` tab.
 
 ### Manual
 
-1. Download `todoist-display-card.js` file from the [latest release](https://github.com/grinstantin/todoist-display-card/releases/latest).
-2. Put `todoist-display-card.js` file into your `config/www` folder.
-3. Add a reference to `todoist-display-card.js` in Lovelace. There's two way to do that:
-   1. **Using UI:** _Configuration_ → _Lovelace Dashboards_ → _Resources_ → Click Plus button → Set _Url_ as `/local/todoist-display-card.js` → Set _Resource type_ as `JavaScript Module`.
+1. Download `todoist-compact-display-card.js` file from the [latest release](https://github.com/grinstantin/todoist-compact-display-card/releases/latest).
+2. Put `todoist-compact-display-card.js` file into your `config/www` folder.
+3. Add a reference to `todoist-compact-display-card.js` in Lovelace. There's two way to do that:
+   1. **Using UI:** _Configuration_ → _Lovelace Dashboards_ → _Resources_ → Click Plus button → Set _Url_ as `/local/todoist-compact-display-card.js` → Set _Resource type_ as `JavaScript Module`.
    2. **Using YAML:** Add the following code to `lovelace` section.
       ```yaml
       resources:
-        - url: /local/todoist-display-card.js
+        - url: /local/todoist-compact-display-card.js
           type: module
       ```
-4. Add `custom:todoist-display-card` to Lovelace UI as any other card (using either editor or YAML configuration).
+4. Add `custom:todoist-compact-display-card` to Lovelace UI as any other card (using either editor or YAML configuration).
 
 ## Using the card
 
@@ -79,7 +79,7 @@ This card can be configured using Lovelace UI editor.
 Typical example of using this card in YAML config would look like this:
 
 ```yaml
-type: 'custom:todoist-display-card'
+type: 'custom:todoist-compact-display-card'
 entity: sensor.to_do_list
 show_header: true
 show_completed: 5
@@ -93,7 +93,7 @@ Here is what every option means:
 
 | Name                 |   Type    |   Default    | Description                                                            |
 | -------------------- | :-------: | :----------: | ---------------------------------------------------------------------- |
-| `type`               | `string`  | **required** | `custom:todoist-display-card`                                                  |
+| `type`               | `string`  | **required** | `custom:todoist-compact-display-card`                                                  |
 | `entity`             | `string`  | **required** | An entity_id within the `sensor` domain.                               |
 | `show_completed`     | `integer` | `5`          | Number of completed tasks shown at the end of the list (0 to disable). |
 | `show_header`        | `boolean` | `true`       | Show friendly name of the selected `sensor` in the card header.        |

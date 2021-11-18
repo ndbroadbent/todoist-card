@@ -241,7 +241,7 @@ class TodoistCard extends LitElement {
     }
     
     static getConfigElement() {
-        return document.createElement('todoist-display-card-editor');
+        return document.createElement('todoist-compact-display-card-editor');
     }
 
     setConfig(config) {
@@ -268,7 +268,7 @@ class TodoistCard extends LitElement {
     
     itemAdd(e) {
         if (e.which === 13) {
-            let input = this.shadowRoot.getElementById('todoist-display-card-item-add');
+            let input = this.shadowRoot.getElementById('todoist-compact-display-card-item-add');
             let value = input.value;
             
             if (value && value.length > 1) {
@@ -454,7 +454,7 @@ class TodoistCard extends LitElement {
             </div>
             ${(this.config.show_item_add === undefined) || (this.config.show_item_add !== false)
                 ? html`<input
-                    id="todoist-display-card-item-add"
+                    id="todoist-compact-display-card-item-add"
                     type="text"
                     class="todoist-item-add"
                     placeholder="New item..."
@@ -537,18 +537,18 @@ class TodoistCard extends LitElement {
     }
 }
 
-customElements.define('todoist-display-card-editor', TodoistCardEditor);
-customElements.define('todoist-display-card', TodoistCard);
+customElements.define('todoist-compact-display-card-editor', TodoistCardEditor);
+customElements.define('todoist-compact-display-card', TodoistCard);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
     preview: true,
-    type: 'todoist-display-card',
+    type: 'todoist-compact-display-card',
     name: 'Todoist Card',
     description: 'Custom card for displaying lists from Todoist.',
 });
 
 console.info(
-    '%c todoist-display-card ',
+    '%c todoist-compact-display-card ',
     'color: white; background: orchid; font-weight: 700',
 );
